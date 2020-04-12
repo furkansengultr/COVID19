@@ -1,8 +1,17 @@
-string isim, soyad, yas, şehir, ates, nefesdarlıgı, öksürük;
-            Console.WriteLine("*COVID19 TANI PROGRAMI ***");
+using System;
 
-            Console.WriteLine("İsminizi Giriniz ");
-            isim = Console.ReadLine();
+namespace COVID19_TANI_PROGRAMI
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string isim, soyad, yas, şehir, ates, nefesdarlıgı, öksürük;
+            Console.Title = "COVID-19 TANI PROGRAMI";//Konsol uygulamasının başlığını düzenler.
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            Console.WriteLine("İsminizi Giriniz "); //Ekrana yazı yazdırma metodu.
+            isim = Console.ReadLine(); //Klavyeden girilen değeri isim değişkenine atar.
             Console.WriteLine("Soyadınızı Giriniz ");
             soyad = Console.ReadLine();
             Console.WriteLine("Yaşınızı Giriniz ");
@@ -11,14 +20,17 @@ string isim, soyad, yas, şehir, ates, nefesdarlıgı, öksürük;
             şehir = Console.ReadLine();
 
             Console.WriteLine("Ateşiniz var mı? ");
-            ates = Console.ReadLine();
+            ates = Console.ReadLine();//Klavyeden girilen değeri ates değişkenine atar.
+
             if (ates == "var")
             {
                 Console.WriteLine("Nefes Darlığınız Var Mı? ");
                 nefesdarlıgı = Console.ReadLine();
+
                 if (nefesdarlıgı == "var")
                 {
-                    Console.WriteLine("En yakın sağlık kuruluşuna gidiniz...");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("**En yakın sağlık kuruluşuna gidiniz**");
                 }
 
                 else
@@ -27,13 +39,17 @@ string isim, soyad, yas, şehir, ates, nefesdarlıgı, öksürük;
                 {
                     Console.WriteLine("Öksürüğünüz Var mı");
                     öksürük = Console.ReadLine();
+
                     if (öksürük == "var")
                     {
-                        Console.WriteLine("En yakın sağlık kuruluşuna gidiniz..");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("**En yakın sağlık kuruluşuna gidiniz**");
                     }
+
                     if (öksürük == "yok")
                     {
-                        Console.WriteLine("Diğer belirtileri gösterirseniz en yakın sağlık kuruluşuna gidiniz..");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("**Diğer belirtileri gösterirseniz en yakın sağlık kuruluşuna gidiniz**");
                     }
 
 
@@ -45,17 +61,21 @@ string isim, soyad, yas, şehir, ates, nefesdarlıgı, öksürük;
             {
                 Console.WriteLine("Nefes darlığınız var mı?  ");
                 nefesdarlıgı = Console.ReadLine();
+
                 if (nefesdarlıgı == "var")
                 {
                     Console.WriteLine("Öksürüğünüz var mı? ");
                     öksürük = Console.ReadLine();
+
                     if (öksürük == "var")
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("En yakın sağlık kuruluşuna gidiniz..");
                     }
                     else
                     {
-                        Console.WriteLine("diğer belirtileri gösteriyorssanız en yakın sağlık kuruluşuna gidiniz..");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("**Diğer belirtileri gösteriyorssanız en yakın sağlık kuruluşuna gidiniz**");
                     }
 
 
@@ -63,19 +83,25 @@ string isim, soyad, yas, şehir, ates, nefesdarlıgı, öksürük;
                 else
                 {
                     Console.WriteLine("öksürüğünüz var mı");
-                    öksürük = Console.ReadLine();
+                    öksürük = Console.ReadLine();//Klavyeden girilen değeri öksürük değişkenine atar.
+
                     if (öksürük == "var")
                     {
-                        Console.WriteLine("Grip Olabilirsiniz");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Grip Olabilirsiniz");//Ekrana yazı yazdırma metodu.
                     }
                     else
                     {
-                        Console.WriteLine("Evde kal");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("**Evde kal**");
                     }
-                    
+
 
 
                 }
 
             }
-            Console.ReadKey();
+            Console.ReadKey(); //Bir tuşa basılana kadar bekler.
+        }
+    }
+}
